@@ -114,3 +114,5 @@ New features must pass:
 3. Does it surprise the user?
 
 If YES to any → reject.
+
+<!-- Control-layer stabilization milestone -->

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GCID — Real-time Web Client</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gesture Craft Intelligent Drawing — Web Client</h1>
+    <div id="status" class="status">Disconnected</div>
+  </header>
+
+  <main>
+    <section class="stream">
+      <div class="video-wrap">
+        <img id="frame" alt="live frame" crossorigin="anonymous" />
+        <canvas id="overlay"></canvas>
+      </div>
+      <aside class="controls">
+        <div class="group">
+          <button id="btnToggleDrawing">Toggle Drawing</button>
+          <button id="btnEraser">Eraser</button>
+          <button id="btnUndo">Undo</button>
+          <button id="btnRedo">Redo</button>
+          <button id="btnNewPage">New Page</button>
+          <button id="btnEraseAll">Erase All</button>
+        </div>
+
+        <div class="group">
+          <label>Color: <input type="color" id="colorPicker" value="#ff0000" /></label>
+          <label>Thickness: <input id="thickness" type="range" min="1" max="30" value="5" /></label>
+        </div>
+
+        <div class="group">
+          <label>WebSocket URL</label>
+          <input id="wsUrl" value="ws://localhost:8001/ws" />
+          <button id="btnConnect">Connect</button>
+        </div>
+
+        <div class="info">
+          <div>Gestures: <span id="gestures">-</span></div>
+          <div>Tool: <span id="tool">-</span></div>
+          <div>Page: <span id="page">-</span></div>
+        </div>
+
+        <div class="group bottom">
+          <button id="btnDownloadCanvas">Download Canvas</button>
+        </div>
+
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <small>Run the backend and open this page. For packaging use Tauri or Electron.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
